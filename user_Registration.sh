@@ -3,7 +3,7 @@
 read -p "Enter your first and last name[Both start with uppercase,separated by space]: " input1
 read -p "Enter your email: " input2
 read -p "Enter your mobile number [Country code folowed by space and 10digit number]: " input3
-read -p "Enter a password [minimum 8 characters and at least 1 uppercase] : " input4
+read -p "Enter a password [minimum 8 characters and at least 1 uppercase,1 digit] : " input4
 
 shopt -s extglob
 
@@ -13,7 +13,7 @@ mobile="^([1-9][0-9]){1}[[:space:]]{1}[1-9]{1}[0-9]{9}$"
 
 #Validation code for password :
 
-if [[ ${#input4} -ge 8 && "$input4" == *[A-Z]* && "$input4" == [A-Za-z0-9]* ]]
+if [[ ${#input4} -ge 8 && "$input4" == *[A-Z]* && "$input4" == *[0-9]* && "$input4" == [A-Za-z0-9]* ]]
 then
         password=1
 else
